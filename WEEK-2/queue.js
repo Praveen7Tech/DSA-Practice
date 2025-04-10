@@ -1,125 +1,125 @@
-// // Queue Implimentation
+// Queue Implimentation
 
-// class Queue {
-//     constructor(){
-//         this.queue = []
-//     }
+class Queue {
+    constructor(){
+        this.queue = []
+    }
 
-//     enqueue(value){
-//         this.queue.push(value)
-//     }
+    enqueue(value){
+        this.queue.push(value)
+    }
 
-//     dequeue(){
-//         return this.queue.shift()
-//     }
+    dequeue(){
+        return this.queue.shift()
+    }
 
-//     peek(){
-//         return this.queue[0]
-//     }
+    peek(){
+        return this.queue[0]
+    }
 
-//     display(){
-//         console.log(this.queue)
-//     }
-// }
+    display(){
+        console.log(this.queue)
+    }
+}
 
-// const queue = new Queue()
+const queue = new Queue()
 
-// queue.enqueue(1)
-// queue.enqueue(2)
-// queue.enqueue(3)
-// queue.display()
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+queue.display()
 
-// console.log(queue.dequeue())
-// console.log(queue.peek())
+console.log(queue.dequeue())
+console.log(queue.peek())
 
-// queue.enqueue(4)
-// queue.display()
+queue.enqueue(4)
+queue.display()
 
 
-// // Circular Queue
+// Circular Queue
 
-// class CircularQueue{
-//     constructor(size){
-//         this.queue = new Array(size)
-//         this.size = size
-//         this.currentLength = 0
-//         this.rear = -1
-//         this.front = -1
-//     }
+class CircularQueue{
+    constructor(size){
+        this.queue = new Array(size)
+        this.size = size
+        this.currentLength = 0
+        this.rear = -1
+        this.front = -1
+    }
 
-//     isFull(){
-//         return this.currentLength === this.size
-//     }
+    isFull(){
+        return this.currentLength === this.size
+    }
 
-//     isEmpty(){
-//         return this.currentLength === 0
-//     }
+    isEmpty(){
+        return this.currentLength === 0
+    }
 
-//     enqueue(value){
-//         if(!this.isFull()){
-//             this.rear = (this.rear + 1) % this.size
-//             this.queue[this.rear] = value
-//             this.currentLength++
-//             if(this.front === -1){
-//                 this.front = this.rear
-//             }
-//         }
-//     }
+    enqueue(value){
+        if(!this.isFull()){
+            this.rear = (this.rear + 1) % this.size
+            this.queue[this.rear] = value
+            this.currentLength++
+            if(this.front === -1){
+                this.front = this.rear
+            }
+        }
+    }
 
-//     dequeue(){
-//         if(this.isEmpty()){
-//             return null
-//         }else{
-//             const removeValue = this.queue[this.front]
-//             this.queue[this.front] = null
-//             this.front = (this.front + 1) % this.size
-//             this.currentLength--
-//             if(this.isEmpty()){
-//                 this.rear = -1
-//                 this.front = -1
-//             }
-//             return removeValue
-//         }
-//     }
+    dequeue(){
+        if(this.isEmpty()){
+            return null
+        }else{
+            const removeValue = this.queue[this.front]
+            this.queue[this.front] = null
+            this.front = (this.front + 1) % this.size
+            this.currentLength--
+            if(this.isEmpty()){
+                this.rear = -1
+                this.front = -1
+            }
+            return removeValue
+        }
+    }
 
-//     peek(){
-//         return this.queue[this.front]
-//     }
+    peek(){
+        return this.queue[this.front]
+    }
 
-//     display(){
-//         if(this.isEmpty()){
-//             return null
-//         }else{
-//             let i;
-//             let ans = ""
+    display(){
+        if(this.isEmpty()){
+            return null
+        }else{
+            let i;
+            let ans = ""
 
-//             for(i = this.front; i !== this.rear ; i =(i+1) % this.size){
-//                 ans += this.queue[i]+" "
-//             }
-//             ans +=this.queue[i]
-//             console.log(ans)
-//         }
-//     }
-// }
+            for(i = this.front; i !== this.rear ; i =(i+1) % this.size){
+                ans += this.queue[i]+" "
+            }
+            ans +=this.queue[i]
+            console.log(ans)
+        }
+    }
+}
 
-// const circular = new CircularQueue(5)
-// circular.enqueue(10)
-// circular.enqueue(20)
-// circular.enqueue(30)
-// circular.enqueue(40)
-// circular.display()
+const circular = new CircularQueue(5)
+circular.enqueue(10)
+circular.enqueue(20)
+circular.enqueue(30)
+circular.enqueue(40)
+circular.display()
 
-// console.log(circular.dequeue())
-// circular.display()
-// console.log(circular.peek())
-// circular.enqueue(50)
-// circular.enqueue(60)
-// circular.display()
-// circular.display()
+console.log(circular.dequeue())
+circular.display()
+console.log(circular.peek())
+circular.enqueue(50)
+circular.enqueue(60)
+circular.display()
+circular.display()
 
-/////////////////////////
+///////////////////////
 
-// Impliment QUEUE Using Stack
+Impliment QUEUE Using Stack
 
 class QueUsingStack{
     constructor(){

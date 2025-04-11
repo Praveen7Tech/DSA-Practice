@@ -65,7 +65,7 @@ class Stack {
     }
 }
 
-const stack = new Stack()
+//const stack = new Stack()
 
 stack.push(1)
 stack.push(2)
@@ -188,7 +188,7 @@ reverse(stack)
 stack.display()
 /////////////////
 
-Impliment STACK using QUEUE
+//Impliment STACK using QUEUE
 
 class StackUsingQue {
     constructor(){
@@ -230,7 +230,7 @@ StackQueue.display()
 /////////////////////////
 
 
-Find MIN value from STACK
+// Find MIN value from STACK
 
 class Stack {
     constructor(){
@@ -264,7 +264,7 @@ class Stack {
         console.log(this.stack)
     }
 }
-const stack = new Stack()
+//const stack = new Stack()
 
 stack.push(20)
 stack.push(50)
@@ -278,10 +278,10 @@ console.log(stack.pop())
 stack.display()
 console.log(stack.getMin())
 
-//////////////
+////////////////
 
 
-SORT stack Using another stack
+// SORT stack Using another stack
 
 class SortStack {
     constructor(){
@@ -320,7 +320,7 @@ function sort(stack){
 
         tempStack.push(temp)
     }
-
+    
     while(!tempStack.isEmpty()){
         stack.push(tempStack.pop())
     }

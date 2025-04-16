@@ -1,5 +1,5 @@
 
-class MaxHeap {
+class MinHeap {
     constructor(){
         this.heap = []
     }

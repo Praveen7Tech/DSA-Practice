@@ -114,3 +114,60 @@ bst.inOrder(bst.root)
 console.log("/////////////");
 bst.delete(3)
 bst.inOrder(bst.root)
+
+
+///////////////////////////////
+
+
+// Binary tree
+class Node {
+    constructor(data) {
+      this.data = data;
+      this.left = null;
+      this.right = null;
+    }
+  }
+  
+  
+  const root = new Node(1);
+  root.left = new Node(2);
+  root.right = new Node(3);
+  root.left.left = new Node(4);
+  root.left.right = new Node(5);
+
+  
+  // In-Order Traversal 
+  function inOrder(node) {
+    if (node) {
+      inOrder(node.left);
+      console.log(node.data);
+      inOrder(node.right);
+    }
+  }
+  
+  // Pre-Order Traversal
+  function preOrder(node) {
+    if (node) {
+      console.log(node.data);
+      preOrder(node.left);
+      preOrder(node.right);
+    }
+  }
+  
+  // Post-Order Traversal 
+  function postOrder(node) {
+    if (node) {
+      postOrder(node.left);
+      postOrder(node.right);
+      console.log(node.data);
+    }
+  }
+  
+  
+  console.log("////////////");
+  inOrder(root);
+  console.log("////////////");
+  preOrder(root);
+  console.log("////////////");
+  postOrder(root);
+  

@@ -88,6 +88,38 @@ class Graph {
         }
     }
 
+    // Shortest path using BFS-u unweighted
+    shortestPath(start,end){
+        let queue = [start]
+        let visited = new Set()
+        let parent = {}
+
+        visited.add(start)
+        parent[start] = null
+
+        while(queue.length > 0){
+            let vertex = queue.shift()
+
+            if(vertex === end){
+                let path = []
+                while(vertex !== null){
+                    path.push(vertex)
+                    vertex = parent[vertex]
+                }
+                return path
+            }
+
+            for(let neighbor of this.graph[vertex]){
+                if(!visited.has(neighbor)){
+                    visited.add(neighbor)
+                    parent[neighbor] = vertex
+                    queue.push(neighbor)
+                }
+            }
+        }
+        return null
+    }
+
     display(){
         for(let vertex in this.graph){
             console.log(vertex+" - > "+[...this.graph[vertex]])
@@ -120,3 +152,5 @@ console.log(graph.hasEdge("A", "B"))
 graph.BFS("A")
 console.log("///////////////")
 graph.DFS("A")
+
+console.log(graph.shortestPath("B", "E"))

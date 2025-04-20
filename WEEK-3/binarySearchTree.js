@@ -209,6 +209,18 @@ class BinarySearchTree {
             }
         }
     }
+
+
+    // Validate Is Given Tree is BST
+
+    isBST(node = this.root, min = -Infinity, max = Infinity){
+        if(!node) return true
+
+        if(node.value < min || node.value > max) return false
+
+        return this.isBST(node.left, min, node.value)
+            && this.isBST(node.right, node.value, max)
+    }
 }
 
 const bst = new BinarySearchTree()
@@ -242,29 +254,32 @@ console.log(bst.Height(bst.root))
 console.log("nth lage",bst.NthLargest(4))
 console.log("second largest", bst.SecondLargest())
 
+console.log("is BST-")
+console.log(bst.isBST())
+
 ///////////////////////////////
 
 
 //  Find the Closest Value to a Given Number in a BST
 
-function findClosestValue(tree, target) {
-    let closest = tree.data;
+// function findClosestValue(tree, target) {
+//     let closest = tree.data;
   
-    function search(node) {
-      if (!node) return;
+//     function search(node) {
+//       if (!node) return;
   
-      if (Math.abs(target - node.data) < Math.abs(target - closest)) {
-        closest = node.data;
-      }
+//       if (Math.abs(target - node.data) < Math.abs(target - closest)) {
+//         closest = node.data;
+//       }
   
-      if (target < node.data) search(node.left);
-      else if (target > node.data) search(node.right);
-      else return;
-    }
+//       if (target < node.data) search(node.left);
+//       else if (target > node.data) search(node.right);
+//       else return;
+//     }
   
-    search(tree);
-    return closest;
-  }
+//     search(tree);
+//     return closest;
+//   }
   
   
   //console.log("Closest to 16:",findClosestValue(bst.root, 16));  
@@ -272,20 +287,5 @@ function findClosestValue(tree, target) {
   
   ////////////////////////////////////
 
-  // Validate Whether a Given Tree is a BST
 
-
-  function isValidBST(node, min = -Infinity, max = Infinity) {
-    if (!node) return true;
-  
-    if (node.data <= min || node.data >= max) return false;
-  
-    return (
-      isValidBST(node.left, min, node.data) &&
-      isValidBST(node.right, node.data, max)
-    );
-  }
-  
-  
-//   console.log("Is valid BST:", isValidBST(bst.root)); 
   

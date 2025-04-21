@@ -83,6 +83,9 @@
 
 
 /////////////////////////////
+
+
+// TRIE
 class TrieNode {
     constructor(){
         this.child = []
@@ -156,7 +159,7 @@ trie.insert("cap")
 trie.insert("camera")
 
 console.log(trie.search("car"))
-//console.log(trie.startWith("camw"))
+console.log(trie.startWith("cam"))
 
-console.log(trie.autoComplete("cam"))
-console.log(trie.autoComplete("ca"));
+// console.log(trie.autoComplete("cam"))
+// console.log(trie.autoComplete("ca"));

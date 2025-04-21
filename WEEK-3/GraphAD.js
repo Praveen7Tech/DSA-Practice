@@ -1,4 +1,5 @@
 
+//Graph
 class Graph {
     constructor(){
         this.graph = {}
@@ -49,7 +50,7 @@ class Graph {
         delete this.graph[vertex]
     }
 
-    // BFS - Breadth first msearch
+    // BFS - Breadth first search
     BFS(start){
         let visited = new Set()
         let queue = [start]

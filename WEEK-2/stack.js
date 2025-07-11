@@ -372,3 +372,26 @@ stk.push(1)
 console.log(stk.getMax())
 
 
+
+// TWO SPACES
+function clampSpaces(str) {
+  return str.replace(/ {3,}/g, "  ");   
+}
+
+console.log(clampSpaces("Hello   world"));          
+console.log(clampSpaces("Too      many     gaps")); 
+
+
+
+//CONVERT OBJ TO STRING
+
+function Convert(obj){
+    const result = Object.entries(obj)
+    .map(([key,val])=> `${key}=${val}`)
+    .join("&")
+    
+    return result
+}
+
+let obj ={name:"hi",age:20}
+console.log(Convert(obj))

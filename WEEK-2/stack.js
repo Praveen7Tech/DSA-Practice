@@ -165,6 +165,7 @@ class Stack {
     }
 }
 
+// REVERSE STACK
 function reverse(stack,reversed=[]){
     if(stack.isEmpty()) return
     
@@ -337,3 +338,37 @@ stack.display()
 
 sort(stack)
 stack.display()
+
+///////////////////////////////////
+
+
+// STACK PUSH, POP, GETMAX, WITH O(1) TIME 
+
+class Stack{
+    constructor(){
+        this.stack = []
+        this.Max = []
+    }
+
+    push(value){
+        this.stack.push(value)
+        const maxVal = this.Max.length === 0 ? value : 
+                       Math.max(value, this.Max[this.Max.length - 1])
+        this.Max.push(maxVal)               
+    }
+
+    pop(){
+        this.Max.pop()
+        this.stack.pop()
+    }
+
+    getMax(){
+        return this.Max[this.Max.length - 1]
+    }
+}
+
+const stk = new Stack()
+stk.push(1)
+console.log(stk.getMax())
+
+

@@ -155,3 +155,40 @@ console.log("///////////////")
 graph.DFS("A")
 
 console.log(graph.shortestPath("B", "E"))
+
+
+
+class Graph {
+    constructor() {
+        this.graph = {};
+    }
+
+    addVertex(vertex) {
+        if (!this.graph[vertex]) {
+            this.graph[vertex] = [];
+        }
+    }
+
+    addEdge(v1, v2) {
+        this.addVertex(v1);
+        this.addVertex(v2);
+
+        this.graph[v1].push(v2);
+        this.graph[v2].push(v1);
+    }
+
+    
+    display() {
+        console.log(this.graph);
+    }
+}
+
+const g = new Graph();
+
+g.addEdge("A", "B");
+g.addEdge("A", "C");
+g.addEdge("B", "D");
+g.addEdge("C", "D");
+g.addEdge("D", "E");
+
+g.display();

@@ -3,7 +3,6 @@ class MinHeap {
     constructor(){
         this.heap = []
     }
-
     // setting parent index
     parentIndex(i){
         return Math.floor((i - 1) / 2)

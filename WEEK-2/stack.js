@@ -343,7 +343,6 @@ stack.display()
 
 
 // STACK PUSH, POP, GETMAX, WITH O(1) TIME 
-
 class Stack{
     constructor(){
         this.stack = []
@@ -358,8 +357,10 @@ class Stack{
     }
 
     pop(){
-        this.Max.pop()
-        this.stack.pop()
+        const removed = this.stack.pop()
+        if(removed == this.Max[this.Max[this.Max.length-1]]){
+            this.Max.pop()
+        }
     }
 
     getMax(){

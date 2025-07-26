@@ -152,6 +152,20 @@ class LinkedList {
         this.size--
     }
 
+    // delete middle
+     deleteMiddle(){
+        let slow = this.head
+        let fast = this.head
+        let prev = null
+        while(fast && fast.next){
+            fast = fast.next.next
+            prev = slow
+            slow = slow.next
+        }
+        prev.next = slow.next
+        this.size--
+    }
+
     // search a value and return the index.
     searchValue(value){
         if(this.isEmpty()){

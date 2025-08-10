@@ -221,6 +221,24 @@ class BinarySearchTree {
         return this.isBST(node.left, min, node.value)
             && this.isBST(node.right, node.value, max)
     }
+
+    // range sum
+
+    rangeSum(root, low, high){
+        if(!root) return 0
+
+        if(root.value < low){
+            return this.rangeSum(root.right, low, high)
+        }
+        if(root.value > high){
+            return this.rangeSum(root.left, low, high)
+        }
+
+        let leftSum = this.rangeSum(root.left, low, high)
+        let rightSum = this.rangeSum(root.right, low, high)
+
+        return root.value + leftSum + rightSum
+    }
 }
 
 const bst = new BinarySearchTree()
@@ -256,6 +274,8 @@ console.log("second largest", bst.SecondLargest())
 
 console.log("is BST-")
 console.log(bst.isBST())
+
+console.log("Range sum between 7 and 15",bst.rangeSum(bst.root, 3, 15))
 
 ///////////////////////////////
 
